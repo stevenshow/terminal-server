@@ -8,4 +8,8 @@ router.get("/", (req, res) => {
   res.status(200).send(cardController.GetHomePageCards());
 });
 
+router.get("/projects", (req, res) => {
+  res.status(200).send(cardController.GetProjects());
+});
+
 module.exports = router;
