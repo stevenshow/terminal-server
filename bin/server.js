@@ -1,16 +1,4 @@
 #!/usr/bin/env node
-var fs = require("fs");
-var path = require("path");
-
-var privateKey = fs.readFileSync(
-  path.resolve(__dirname, "private.key"),
-  "utf8"
-);
-var certificate = fs.readFileSync(
-  path.resolve(__dirname, "server.crt"),
-  "utf8"
-);
-var credentials = { key: privateKey, cert: certificate };
 
 /**
  * Module dependencies.
@@ -18,7 +6,7 @@ var credentials = { key: privateKey, cert: certificate };
 
 var app = require("../app");
 var debug = require("debug")("terminal-server:server");
-var https = require("https");
+var http = require("http");
 
 /**
  * Get port from environment and store in Express.
@@ -32,7 +20,7 @@ console.log("Server is now listening on port " + port);
  * Create HTTP server.
  */
 
-var server = https.createServer(credentials, app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
