@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 var fs = require("fs");
 
-var privateKey = fs.readFileSync("../private.key", "utf8");
-var certificate = fs.readFileSync("../server.crt", "utf8");
+var privateKey = fs.readFileSync("private.key", "utf8");
+var certificate = fs.readFileSync("server.crt", "utf8");
 var credentials = { key: privateKey, cert: certificate };
 
 /**
