@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as fs from "node:fs";
+var fs = require("fs");
 
 var privateKey = fs.readFileSync("../private.key", "utf8");
 var certificate = fs.readFileSync("../server.crt", "utf8");
