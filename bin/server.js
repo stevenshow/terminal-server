@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+var privateKey = fs.readFileSync("../private.key", "utf8");
+var certificate = fs.readFileSync("../server.crt", "utf8");
+var credentials = { key: privateKey, cert: certificate };
+
 /**
  * Module dependencies.
  */
@@ -20,7 +24,7 @@ console.log("Server is now listening on port " + port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(credentials, app);
 
 /**
  * Listen on provided port, on all network interfaces.
