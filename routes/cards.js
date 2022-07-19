@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const CardController = require("../controllers/CardController");
 
-/* GET users listing. */
-router.get("/", (req, res, next) => {
-  res.status(200).send("respond with cards");
+const cardController = new CardController();
+
+router.get("/", (req, res) => {
+  res.status(200).send(cardController.GetHomePageCards());
 });
 
 module.exports = router;
