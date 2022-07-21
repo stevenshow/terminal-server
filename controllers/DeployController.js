@@ -4,7 +4,7 @@ class DeployController {
   constructor() {}
 
   GitPull = () => {
-    const ls = spawn("git", ["pull origin main"]);
+    const ls = spawn("git", ["pull", "origin", "main"]);
 
     ls.stdout.on("data", (data) => {
       console.log(`stdout: ${data}`);
