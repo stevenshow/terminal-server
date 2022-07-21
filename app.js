@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/cards", cardsRouter);
+
 // TODO figure out how to correctly validate
 // app.use(validatePayload);
 app.use("/deploy", deployRouter);
