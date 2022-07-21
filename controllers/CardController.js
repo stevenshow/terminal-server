@@ -33,7 +33,7 @@ class CardController {
   };
 
   GetAll = async () => {
-    await this.database.GetAll();
+    return await this.database.GetAll();
   };
 }
 
