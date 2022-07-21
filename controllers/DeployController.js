@@ -1,6 +1,5 @@
 const { spawn } = require("child_process");
 const chalk = require("chalk");
-const log = console.log();
 
 class DeployController {
   constructor() {}
@@ -9,19 +8,19 @@ class DeployController {
     const ls = spawn("git", ["pull"]);
 
     ls.stdout.on("data", (data) => {
-      log(chalk.cyan(`stdout: ${data}`));
+      console.log(chalk.cyan(`stdout: ${data}`));
     });
 
     ls.stderr.on("data", (data) => {
-      log(`stderr: ${data}`);
+      console.log(`stderr: ${data}`);
     });
 
     ls.on("error", (error) => {
-      log(`error: ${error.message}`);
+      console.log(`error: ${error.message}`);
     });
 
     ls.on("close", (code) => {
-      log(`child process exited with code ${code}`);
+      console.log(`child process exited with code ${code}`);
     });
   };
 }
