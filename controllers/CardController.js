@@ -9,7 +9,7 @@ processInsert = (datum) => prepareDatabaseDates(datum, ["date"]);
 class CardController {
   constructor() {
     this.database = new Database({
-      tableName: cards,
+      tableName: "cards",
       processor: this.processResult,
       beforeInsert: this.processInsert,
       timestamps: false,
