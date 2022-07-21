@@ -4,12 +4,16 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
+require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const cardsRouter = require("./routes/cards");
+const deployRouter = require("./routes/deploy");
 
 const app = express();
+const validatePayload = require("./utils/ValidatePayload");
+
 app.use(cors());
 
 // view engine setup
@@ -25,6 +29,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/cards", cardsRouter);
+app.use(validatePayload);
+app.use("/deploy", deployRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
