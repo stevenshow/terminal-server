@@ -11,10 +11,6 @@ class DeployController {
       console.log(chalk.cyan(`stdout: ${data}`));
     });
 
-    ls.stderr.on("data", (data) => {
-      console.log(`stderr: ${data}`);
-    });
-
     ls.on("error", (error) => {
       console.log(`error: ${error.message}`);
     });
