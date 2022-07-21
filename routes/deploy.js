@@ -1,8 +1,3 @@
-// const express = require("express");
-// const DeployController = require("../controllers/DeployController");
-
-// const deployController = new DeployController();
-
 //Validate payload
 const crypto = require("crypto");
 const express = require("express");
