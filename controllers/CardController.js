@@ -17,7 +17,6 @@ class CardController {
     ContactCards.map((card) => {
       card.ascii = card.ascii.join("\n");
     });
-    console.log(ContactCards);
     return ContactCards;
   };
 }
