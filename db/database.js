@@ -23,7 +23,7 @@ class Database {
 
   GetAll = async (transaction = knex) => {
     return this.ProcessResults(
-      await transaction.select("*").from(this.tableName).orderBy(this.sort)
+      await transaction.select("*").from(this.tableName)
     );
   };
 
