@@ -14,7 +14,7 @@ const validatePayload = (req, res, next) => {
       sigHashAlg + "=" + hmac.update(req.rawBody).digest("hex"),
       "utf8"
     );
-    console.log("digest ", digest);
+    console.log("digest", digest);
 
     if (sig.length !== digest.length || !crypto.timingSafeEqual(digest, sig)) {
       return next(
