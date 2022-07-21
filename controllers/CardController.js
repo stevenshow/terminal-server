@@ -32,7 +32,7 @@ class CardController {
     return ContactCards;
   };
 
-  GetAll = () => {
+  GetAll = async () => {
     await this.database.GetAll();
   };
 }
