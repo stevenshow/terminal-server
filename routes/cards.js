@@ -1,3 +1,4 @@
+const { json } = require("express");
 const express = require("express");
 const router = express.Router();
 const CardController = require("../controllers/CardController");
@@ -17,7 +18,9 @@ router.get("/contact", (req, res) => {
 });
 
 router.get("/test", async (req, res) => {
-  res.status(200).send(await cardController.GetAll());
+  let data = await cardController.GetAll();
+  data = JSON.parse(data);
+  res.status(200).send(data);
 });
 
 module.exports = router;
