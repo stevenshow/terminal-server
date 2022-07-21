@@ -1,5 +1,5 @@
-import HomeCards from "../data/Home.json";
-import ProjectCards from "../data/Projects.json";
+const HomeCards = require("../data/Home.json");
+const ProjectCards = require("../data/Projects.json");
 
 class CardController {
   constructor() {}
@@ -13,4 +13,4 @@ class CardController {
   };
 }
 
-export default CardController;
+module.exports = CardController;
