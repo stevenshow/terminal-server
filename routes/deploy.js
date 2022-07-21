@@ -1,23 +1,8 @@
 //Validate payload
-const crypto = require("crypto");
 const express = require("express");
-const bodyParser = require("body-parser");
 const sigHeaderName = "X-Hub-Signature-256";
 const sigHashAlg = "sha256";
 const router = express.Router();
-const app = express();
-
-// Saves a valid raw JSON body to req.rawBody
-// Credits to https://stackoverflow.com/a/35651853/90674
-app.use(
-  bodyParser.json({
-    verify: (req, res, buf, encoding) => {
-      if (buf && buf.length) {
-        req.rawBody = buf.toString(encoding || "utf8");
-      }
-    },
-  })
-);
 
 const validatePayload = (req, res, next) => {
   if (!req.rawBody) {

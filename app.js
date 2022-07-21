@@ -6,6 +6,9 @@ const logger = require("morgan");
 const cors = require("cors");
 require("dotenv").config();
 
+const bodyParser = require("body-parser");
+const crypto = require("crypto");
+
 const indexRouter = require("./routes/index");
 const cardsRouter = require("./routes/cards");
 const deployRouter = require("./routes/deploy");
@@ -28,6 +31,17 @@ app.use("/", indexRouter);
 app.use("/cards", cardsRouter);
 // TODO figure out how to correctly validate
 // app.use(validatePayload);
+// Saves a valid raw JSON body to req.rawBody
+// Credits to https://stackoverflow.com/a/35651853/90674
+app.use(
+  bodyParser.json({
+    verify: (req, res, buf, encoding) => {
+      if (buf && buf.length) {
+        req.rawBody = buf.toString(encoding || "utf8");
+      }
+    },
+  })
+);
 app.use("/deploy", deployRouter);
 
 // catch 404 and forward to error handler
