@@ -19,7 +19,7 @@ router.get("/contact", (req, res) => {
 
 router.get("/test", async (req, res) => {
   let data = await cardController.GetAll();
-  data = JSON.parse(data);
+  console.log(data["card"]);
   res.status(200).send(data);
 });
 
