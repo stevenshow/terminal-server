@@ -4,11 +4,7 @@ const sigHashAlg = "sha256";
 
 const validatePayload = (req, res, next) => {
   if (req.method == "POST") {
-    if (!req.rawBody) {
-      console.log("here");
-      return next("Request body empty");
-    }
-
+    console.log(req);
     const sig = Buffer.from(req.get(sigHeaderName) || "", "utf8");
     const hmac = crypto.createHmac(sigHashAlg, process.env.CONFIG_SECRET);
     const digest = Buffer.from(
