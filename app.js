@@ -11,7 +11,6 @@ const cardsRouter = require("./routes/cards");
 const deployRouter = require("./routes/deploy");
 
 const app = express();
-const validatePayload = require("./utils/ValidatePayload");
 
 app.use(cors());
 
