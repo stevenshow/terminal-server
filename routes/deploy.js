@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const DeployController = require("../controllers/DeployController");
+// const express = require("express");
+// const router = express.Router();
+// const DeployController = require("../controllers/DeployController");
 
-const deployController = new DeployController();
+// const deployController = new DeployController();
 
 //Validate payload
 const crypto = require("crypto");
