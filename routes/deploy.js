@@ -6,7 +6,7 @@ const deployController = new DeployController();
 
 router.post("/repo-push-event", (req, res) => {
   deployController.GitPull();
-  res.status(200).send("nice");
+  res.status(200).send();
 });
 
 module.exports = router;
