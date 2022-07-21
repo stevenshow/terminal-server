@@ -17,15 +17,15 @@ class CardController {
     });
   }
 
-  GetHomePageCards = () => {
+  GetHomePageCards = async () => {
     return HomeCards;
   };
 
-  GetProjects = () => {
+  GetProjects = async () => {
     return ProjectCards;
   };
 
-  GetContacts = () => {
+  GetContacts = async () => {
     ContactCards?.map((card) => {
       if (typeof card.ascii === "object") card.ascii = card.ascii.join("");
     });
