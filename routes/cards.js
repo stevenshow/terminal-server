@@ -12,4 +12,8 @@ router.get("/projects", (req, res) => {
   res.status(200).send(cardController.GetProjects());
 });
 
+router.get("/contact", (req, res) => {
+  res.status(200).send(cardController.GetContacts());
+});
+
 module.exports = router;

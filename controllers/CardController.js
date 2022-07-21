@@ -1,5 +1,6 @@
 const HomeCards = require("../data/Home.json");
 const ProjectCards = require("../data/Projects.json");
+const ContactCards = require("../data/Contact.json");
 
 class CardController {
   constructor() {}
@@ -10,6 +11,10 @@ class CardController {
 
   GetProjects = () => {
     return ProjectCards;
+  };
+
+  GetContacts = () => {
+    return ContactCards;
   };
 }
 
