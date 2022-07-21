@@ -14,8 +14,10 @@ class CardController {
   };
 
   GetContacts = () => {
-    ContactCards.map((card) => {
-      card.ascii = card.ascii.join("\n");
+    console.log(ContactCards);
+
+    ContactCards?.map((card) => {
+      if (typeof card.ascii === "object") card.ascii = card.ascii.join("");
     });
     return ContactCards;
   };
