@@ -4,7 +4,22 @@ const crypto = require("crypto");
 const sigHeaderName = "X-Hub-Signature-256";
 const sigHashAlg = "sha256";
 
+// Saves a valid raw JSON body to req.rawBody
+// Credits to https://stackoverflow.com/a/35651853/90674
+app.use(
+  bodyParser.json({
+    verify: (req, res, buf, encoding) => {
+      if (buf && buf.length) {
+        req.rawBody = buf.toString(encoding || "utf8");
+      }
+    },
+  })
+);
+
 const validatePayload = (req, res, next) => {
+  if (!req.rawBody) {
+    return next("Request body empty");
+  }
   if (req.method == "POST") {
     const sig = Buffer.from(req.get(sigHeaderName) || "", "utf8");
     console.log("sig ", sig);
