@@ -4,8 +4,6 @@ const DeployController = require("../controllers/DeployController");
 
 const deployController = new DeployController();
 
-//TODO extract to controller?
-
 router.post("/repo-push-event", (req, res) => {
   //   exec("git pull", (error, stdout, stderr) => {
   //     if (error) {
