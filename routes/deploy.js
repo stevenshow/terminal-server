@@ -14,7 +14,7 @@ router.post("/repo-push-event", (req, res) => {
     }
     console.log(`stdout: ${stdout}`);
   });
-  res.status(200).send("good one");
+  res.status(200).send("good");
 });
 
 module.exports = router;
