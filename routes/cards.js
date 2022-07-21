@@ -16,4 +16,8 @@ router.get("/contact", (req, res) => {
   res.status(200).send(cardController.GetContacts());
 });
 
+router.get("/test", (req, res) => {
+  res.status(200).send(cardController.GetAll());
+});
+
 module.exports = router;
