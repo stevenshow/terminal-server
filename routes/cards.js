@@ -18,9 +18,7 @@ router.get("/contact", (req, res) => {
 });
 
 router.get("/test", async (req, res) => {
-  let data = await cardController.GetAll();
-  console.log(data["card"]);
-  res.status(200).send(data);
+  res.status(200).send(await cardController.GetAll());
 });
 
 module.exports = router;

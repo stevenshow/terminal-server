@@ -33,7 +33,11 @@ class CardController {
   };
 
   GetAll = async () => {
-    return await this.database.GetAll();
+    let data = await this.database.GetAll();
+    data.map((card, i) => {
+      card["card"] = JSON.parse(card["card"]);
+    });
+    return data;
   };
 }
 
