@@ -7,6 +7,7 @@
 //Validate payload
 const crypto = require("crypto");
 const express = require("express");
+const bodyParser = require("body-parser");
 const sigHeaderName = "X-Hub-Signature-256";
 const sigHashAlg = "sha256";
 const app = express();
