@@ -1,5 +1,7 @@
 const knex = require("./knex");
 
+let identity = (x) => x;
+
 class Database {
   constructor({
     primaryKeyName,
