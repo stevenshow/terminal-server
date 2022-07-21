@@ -14,8 +14,6 @@ class CardController {
   };
 
   GetContacts = () => {
-    console.log(ContactCards);
-
     ContactCards?.map((card) => {
       if (typeof card.ascii === "object") card.ascii = card.ascii.join("");
     });
