@@ -10,6 +10,7 @@ const validatePayload = (req, res, next) => {
       sigHashAlg + "=" + hmac.update(req.rawBody).digest("hex"),
       "utf8"
     );
+
     console.log("sig", sig);
     console.log("hmac", hmac);
     console.log("digest", digest);
