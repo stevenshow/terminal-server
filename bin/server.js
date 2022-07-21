@@ -7,6 +7,7 @@
 var app = require("../app");
 var debug = require("debug")("terminal-server:server");
 var http = require("http");
+const chalk = require("chalk");
 
 /**
  * Get port from environment and store in Express.
@@ -14,7 +15,7 @@ var http = require("http");
 
 var port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
-console.log("Server is now listening on port " + port);
+console.log("Server is now listening on port " + chalk.green(port));
 
 /**
  * Create HTTP server.
