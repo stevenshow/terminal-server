@@ -3,7 +3,7 @@ const router = express.Router();
 const { exec } = require("child_process");
 
 router.post("/repo-push-event", (req, res) => {
-  exec("ls -la", (error, stdout, stderr) => {
+  exec("git pull", (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
       return;
