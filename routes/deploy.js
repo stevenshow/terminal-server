@@ -1,5 +1,4 @@
 // const express = require("express");
-const router = express.Router();
 // const DeployController = require("../controllers/DeployController");
 
 // const deployController = new DeployController();
@@ -10,6 +9,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const sigHeaderName = "X-Hub-Signature-256";
 const sigHashAlg = "sha256";
+const router = express.Router();
 const app = express();
 // Saves a valid raw JSON body to req.rawBody
 // Credits to https://stackoverflow.com/a/35651853/90674
