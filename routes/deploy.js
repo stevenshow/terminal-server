@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { exec } = require("child_process");
 
+//TODO extract to controller?
 router.post("/repo-push-event", (req, res) => {
   exec("git pull", (error, stdout, stderr) => {
     if (error) {
