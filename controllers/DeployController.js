@@ -8,7 +8,7 @@ class DeployController {
     const ls = spawn("git", ["pull"]);
 
     ls.stdout.on("data", (data) => {
-      console.log(`stdout: chalk.cyan(${data})`);
+      console.log(`stdout: ${chalk.cyan(data)}`);
     });
 
     ls.on("error", (error) => {
