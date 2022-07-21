@@ -1,4 +1,6 @@
 //Validate payload
+const crypto = require("crypto");
+
 const sigHeaderName = "X-Hub-Signature-256";
 const sigHashAlg = "sha256";
 
