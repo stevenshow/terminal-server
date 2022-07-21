@@ -16,7 +16,11 @@ class DeployController {
     });
 
     ls.on("close", (code) => {
-      console.log(`child process exited with code ${code}`);
+      console.log(
+        `child process exited with code ${
+          code === 0 ? chalk.green(code) : chalk.red(code)
+        }`
+      );
     });
   };
 }
