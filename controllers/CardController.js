@@ -34,7 +34,6 @@ class CardController {
 
   GetAll = async () => {
     let data = await this.database.GetAll();
-    console.log(data);
     return data;
   };
 }
