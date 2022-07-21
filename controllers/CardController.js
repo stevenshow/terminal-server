@@ -33,7 +33,9 @@ class CardController {
   };
 
   GetAll = async () => {
-    return await this.database.GetAll();
+    let data = await this.database.GetAll();
+    console.log(chalk.orange(data));
+    return data;
   };
 }
 
