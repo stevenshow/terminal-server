@@ -5,7 +5,7 @@
     },
     {
       "name": "Raspberry Pi",
-      "content": "My Raspberry Pi is a device that has helped foster my imagination and love for tech. I love the ability that I have to deploy an automated script that can collect data for me, send emails/texts, or just turn on LEDs based on the local weather. This gives me the ability to take whatever idea I have and create a project that can affect my surroundings in a real sense."
+      "content": "My Raspberry Pi is a device that has helped foster my imagination and love for tech. I love the ability that I have to deploy an automated script that can collect data for me, send emails/texts, or just turn on LEDs based on the local weather. This gives me the ability to take whatever idea I have and create a project that can affect my surroundings in a real sense. All of the data on this website is actually being served from a server running on my Pi right now."
     },
     {
       "name": "Front End Development",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Python",
-      "content": "Python is a language that I fell in love with about halfway through my college degree. I love that I am able to do something that would be complex in a more verbose language, and do it in a few lines of code. It is also the main language used on the Raspberry Pi, so naturally, it became a language I am very strong in."
+      "content": "Python is a language that I fell in love with halfway through my college degree. I love that I am able to do something that would be complex in a more verbose language, and do it in a few lines of code. It is also the main language used on the Raspberry Pi, so naturally, it became a language I am very strong in."
     },
     {
       "name": "UVU",
