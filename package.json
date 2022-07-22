@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon -L ./bin/server"
+    "start": "nodemon -L ./bin/server",
+    "migrate": "",
+    "seed": ""
   },
   "dependencies": {
     "chalk": "^4.1.0",
