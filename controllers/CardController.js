@@ -18,9 +18,7 @@ class CardController {
   }
 
   GetHomePageCards = async () => {
-    let data = await this.database.GetAll("home_cards");
-    console.log(data);
-    return data;
+    return await this.database.GetAll("home_cards");
   };
 
   GetProjects = async () => {
