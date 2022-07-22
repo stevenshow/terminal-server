@@ -1,4 +1,6 @@
-module.exports = require("knex")({
+require("dotenv").config();
+
+module.exports = {
   client: "mysql",
   version: "5.7",
   connection: {
@@ -8,4 +10,4 @@ module.exports = require("knex")({
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DB,
   },
-});
+};
