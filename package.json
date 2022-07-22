@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon -L ./bin/server",
-    "migrate": "env-cmd --no-override npx knex migrate:latest",
+    "migrate": "npx knex migrate:latest",
     "seed": ""
   },
   "dependencies": {
