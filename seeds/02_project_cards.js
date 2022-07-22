@@ -17,7 +17,7 @@ exports.seed = async function (knex) {
     {
       id: 2,
       name: "Recipe Database",
-      language: "mySQL",
+      language: "MySQL",
       description:
         "I created a database to store recipes that my wife could then utilize to easily locate what she wanted. I focused on allowing it to be searchable by food type, cook time, ingredients needed, etc.",
       takeaway: "Properly set up database, Query database",
