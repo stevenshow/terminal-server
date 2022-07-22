@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon -L ./bin/server",
     "migrate": "npx knex migrate:latest",
-    "seed": ""
+    "seed": "npx knex seed:run"
   },
   "dependencies": {
     "chalk": "^4.1.0",
