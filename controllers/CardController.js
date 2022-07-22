@@ -22,7 +22,7 @@ class CardController {
   };
 
   GetProjects = async () => {
-    return ProjectCards;
+    return await this.database.GetAll("project_cards");
   };
 
   GetContacts = async () => {
