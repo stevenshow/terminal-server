@@ -9,7 +9,7 @@ processInsert = (datum) => prepareDatabaseDates(datum, ["date"]);
 class CardController {
   constructor() {
     this.database = new Database({
-      tableName: "cards",
+      tableName: "",
       processor: this.processResult,
       beforeInsert: this.processInsert,
       timestamps: false,
@@ -18,7 +18,9 @@ class CardController {
   }
 
   GetHomePageCards = async () => {
-    return HomeCards;
+    let data = await this.database.GetAll("home_cards");
+    console.log(data);
+    return data;
   };
 
   GetProjects = async () => {

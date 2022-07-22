@@ -21,9 +21,9 @@ class Database {
     this.sort = sort || [{ column: `${this.primaryKeyName}`, order: "asc" }];
   }
 
-  GetAll = async (transaction = knex) => {
+  GetAll = async (table = "", transaction = knex) => {
     return this.ProcessResults(
-      await transaction.select("*").from(this.tableName)
+      await transaction.select("*").from(table || this.tableName)
     );
   };
 
