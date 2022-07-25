@@ -26,10 +26,11 @@ class CardController {
   };
 
   GetContacts = async () => {
-    ContactCards?.map((card) => {
-      if (typeof card.ascii === 'object') card.ascii = card.ascii.join('');
-    });
-    return ContactCards;
+    return await this.database.GetAll('contact_cards');
+    // ContactCards?.map((card) => {
+    //   if (typeof card.ascii === 'object') card.ascii = card.ascii.join('');
+    // });
+    // return ContactCards;
   };
 }
 
