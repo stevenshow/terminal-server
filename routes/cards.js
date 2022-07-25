@@ -17,8 +17,4 @@ router.get("/contact", async (req, res) => {
   res.status(200).send(await cardController.GetContacts());
 });
 
-router.get("/test", async (req, res) => {
-  res.status(200).send(await cardController.GetAll());
-});
-
 module.exports = router;

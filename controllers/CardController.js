@@ -31,14 +31,6 @@ class CardController {
     });
     return ContactCards;
   };
-
-  GetAll = async () => {
-    let data = await this.database.GetAll();
-    data.map((card, i) => {
-      card["card"] = JSON.parse(card["card"]);
-    });
-    return data;
-  };
 }
 
 module.exports = CardController;
