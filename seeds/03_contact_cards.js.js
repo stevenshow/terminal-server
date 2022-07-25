@@ -21,7 +21,7 @@ exports.seed = async function (knex) {
         "  ____ _ _   _   _       _     \n / ___(_) |_| | | |_   _| |__  \n| |  _| | __| |_| | | | | '_ \\ \n| |_| | | |_|  _  | |_| | |_) |\n \\____|_|\\__|_| |_|\\__,_|_.__/ \n                                 ",
     },
     {
-      id: 2,
+      id: 3,
       name: 'Email',
       link: 'mailto:steven.schoebinger@gmail.com',
       ascii:
