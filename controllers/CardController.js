@@ -1,6 +1,3 @@
-const HomeCards = require('../data/Home.json');
-const ProjectCards = require('../data/Projects.json');
-const ContactCards = require('../data/Contact.json');
 const Database = require('../db/database');
 
 processResult = (datum) => ({ ...datum, boolean: !!datum.boolean });
