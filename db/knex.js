@@ -1,6 +1,6 @@
-const knex = require("knex")({
-  client: "mysql",
-  version: "5.7",
+const knex = require('knex')({
+  client: 'mysql',
+  version: '5.7',
   connection: {
     host: process.env.MYSQL_HOST,
     port: process.env.MYSQL_PORT,

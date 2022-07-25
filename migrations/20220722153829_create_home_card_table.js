@@ -3,10 +3,10 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("home_cards", (table) => {
-    table.increments("id").primary();
-    table.string("name", 100);
-    table.text("content");
+  return knex.schema.createTable('home_cards', (table) => {
+    table.increments('id').primary();
+    table.string('name', 100);
+    table.text('content');
   });
 };
 
@@ -15,5 +15,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("home_cards");
+  return knex.schema.dropTable('home_cards');
 };
