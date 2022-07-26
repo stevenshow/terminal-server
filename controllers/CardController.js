@@ -1,23 +1,29 @@
-const HomeCards = require("../data/Home.json");
-const ProjectCards = require("../data/Projects.json");
-const ContactCards = require("../data/Contact.json");
+const Database = require('../db/database');
+
+processResult = (datum) => ({ ...datum, boolean: !!datum.boolean });
+processInsert = (datum) => prepareDatabaseDates(datum, ['date']);
 
 class CardController {
-  constructor() {}
-
-  GetHomePageCards = () => {
-    return HomeCards;
-  };
-
-  GetProjects = () => {
-    return ProjectCards;
-  };
-
-  GetContacts = () => {
-    ContactCards?.map((card) => {
-      if (typeof card.ascii === "object") card.ascii = card.ascii.join("");
+  constructor() {
+    this.database = new Database({
+      tableName: '',
+      processor: this.processResult,
+      beforeInsert: this.processInsert,
+      timestamps: false,
+      itemName: 'card',
     });
-    return ContactCards;
+  }
+
+  GetHomePageCards = async () => {
+    return await this.database.GetAll('home_cards');
+  };
+
+  GetProjects = async () => {
+    return await this.database.GetAll('project_cards');
+  };
+
+  GetContacts = async () => {
+    return await this.database.GetAll('contact_cards');
   };
 }
 

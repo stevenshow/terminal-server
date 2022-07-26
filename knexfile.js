@@ -1,6 +1,8 @@
-const knex = require('knex')({
-  client: 'mysql',
-  version: '5.7',
+require("dotenv").config();
+
+module.exports = {
+  client: "mysql",
+  version: "5.7",
   connection: {
     host: process.env.MYSQL_HOST,
     port: process.env.MYSQL_PORT,
@@ -8,6 +10,4 @@ const knex = require('knex')({
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DB,
   },
-});
-
-module.exports = knex;
+};
