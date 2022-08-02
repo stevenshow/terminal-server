@@ -8,6 +8,15 @@ exports.seed = async function (knex) {
   await knex('project_cards').insert([
     {
       id: 1,
+      name: 'Terminal Website Server',
+      language: 'Node.js',
+      description:
+        'I wanted to store the data for this website externally as well as learn how to host a website/server on my own hardware so that I can have more control over it. This led to creating this server with Node.js and hosting it on my Raspberry Pi. I was new to port forwarding and proxying, but I learned a lot about how our computers are accessed externally and internally. This server has migration and seed files for a MariaDB Database that is hosted on the Pi as well. This allows the server to be deployed on another device and still be able to populate the correct data.',
+      takeaway:
+        'Create REST API, Set up Reverse Proxy with NGINX, Set up Dynamic DNS to route to Raspberry Pi',
+    },
+    {
+      id: 2,
       name: 'Cat Fact Generator',
       language: 'Python',
       description:
@@ -15,7 +24,7 @@ exports.seed = async function (knex) {
       takeaway: 'Consume an API, Cron scheduling',
     },
     {
-      id: 2,
+      id: 3,
       name: 'Recipe Database',
       language: 'MySQL',
       description:
@@ -23,7 +32,7 @@ exports.seed = async function (knex) {
       takeaway: 'Properly set up database, Query database',
     },
     {
-      id: 3,
+      id: 4,
       name: 'Local Weather Data Gatherer',
       language: 'Python',
       description:
