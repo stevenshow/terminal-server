@@ -8,7 +8,9 @@
     "seed": "npx knex seed:run"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.12",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
