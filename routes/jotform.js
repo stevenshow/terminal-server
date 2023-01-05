@@ -6,7 +6,17 @@ const JotFormController = require('../controllers/JotFormController');
 const jotFormController = new JotFormController();
 
 router.post('/', async (req, res) => {
-  jotFormController.InsertSurvey(req.body);
+  const {
+    formID: formId,
+    ip,
+    ['name[first]']: firstName,
+    ['name[last]']: lastName,
+    website,
+    help: type,
+    description,
+  } = req.body;
+  const name = firstName + lastName;
+  jotFormController.InsertSurvey({ formId, ip, name, description, type, website });
   res.status(200).send(`${req.body?.['name[first]']} thank you for taking the survey!`);
   console.log(req.body);
 });
