@@ -6,7 +6,7 @@ const CardController = require('../controllers/CardController');
 const cardController = new CardController();
 
 router.post('/', async (req, res) => {
-  res.status(200).send('ok');
+  res.status(200).send(req.body[first]);
   console.log(req.body);
 });
 
