@@ -7,7 +7,7 @@ const cardController = new CardController();
 
 router.post('/', async (req, res) => {
   res.status(200).send('ok');
-  console.log(req.body);
+  console.log(req);
 });
 
 module.exports = router;
