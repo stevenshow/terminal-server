@@ -15,11 +15,10 @@ router.post('/', async (req, res) => {
     help: type,
     description,
   } = req.body;
-  const name = firstName + lastName;
+  const name = firstName + ' ' + lastName;
   const data = { formId, ip, name, description, type, website };
   jotFormController.InsertSurvey(data);
   res.status(200).send(`${req.body?.['name[first]']} thank you for taking the survey!`);
-  //   console.log(req.body);
 });
 
 module.exports = router;
