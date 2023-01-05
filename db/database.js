@@ -14,12 +14,9 @@ class Database {
   }
 
   Create = async (item, transaction = knex) => {
-    let itemToInsert = this.ProcessSingleInsert(this.AddTimestamps(item));
     let id = this.primaryKeyName;
     try {
-      [id] = await transaction(this.tableName)
-        .insert(itemToInsert)
-        .returning(`${this.primaryKeyName}`);
+      [id] = await transaction(this.tableName).insert(item).returning(`${this.primaryKeyName}`);
     } catch (e) {
       if (e.message.includes('unique constraint') && e.message.includes('violated')) {
         throw new DuplicateError(`New ${this.itemName} already exists`);
