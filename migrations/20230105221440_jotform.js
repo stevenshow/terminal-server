@@ -11,6 +11,7 @@ exports.up = function (knex) {
     table.string('description', 500);
     table.string('type', 15);
     table.string('website', 30);
+    table.string('email', 100);
   });
 };
 
