@@ -14,10 +14,11 @@ router.post('/', async (req, res) => {
     website,
     help: type,
     description,
+    typea: email,
   } = req.body;
   console.log(req.body);
   const name = firstName + ' ' + lastName;
-  const data = { formId, ip, name, description, type, website };
+  const data = { formId, ip, name, description, type, website, email };
   jotFormController.InsertSurvey(data);
   res.status(200).send(`${req.body?.['name[first]']} thank you for taking the survey!`);
 });
