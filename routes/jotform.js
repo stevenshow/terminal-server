@@ -14,9 +14,8 @@ router.post('/', async (req, res) => {
     website,
     help: type,
     description,
-    typea: email,
+    typea9: email,
   } = req.body;
-  console.log(req.body);
   const name = firstName + ' ' + lastName;
   const data = { formId, ip, name, description, type, website, email };
   jotFormController.InsertSurvey(data);
