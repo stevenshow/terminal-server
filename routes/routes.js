@@ -5,5 +5,6 @@ router.use('/cards', require('./cards'));
 router.use('/products', require('./products'));
 router.use('/deploy', require('./deploy'));
 router.use('/jotform', require('./jotform'));
+router.use('/pico', require('./pico'));
 
 module.exports = router;
