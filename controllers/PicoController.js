@@ -16,8 +16,7 @@ class PicoController {
 
   InsertReading = async (reading) => {
     console.log(reading);
-    return 'hello';
-    // return await this.database.Create(reading);
+    return await this.database.Create(reading);
   };
 }
 
