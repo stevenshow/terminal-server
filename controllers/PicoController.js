@@ -18,7 +18,8 @@ class PicoController {
     const date = new Date();
     console.log(reading);
     console.log(date);
-    return await this.database.Create({ time: date, ...reading });
+    return 'hello';
+    // return await this.database.Create({ time: date, ...reading });
   };
 }
 
