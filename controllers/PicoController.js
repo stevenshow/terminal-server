@@ -16,7 +16,7 @@ class PicoController {
 
   InsertReading = async ({ temperature: temp, humidity }) => {
     console.log({ temp, humidity });
-    return await this.database.Create({ temp, humidity });
+    return await this.database.Create({ temp: temp.toFixed(2), humidity: humidity.toFixed(2) });
   };
 }
 
