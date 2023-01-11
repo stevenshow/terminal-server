@@ -6,8 +6,8 @@ exports.up = function (knex) {
   return knex.schema.createTable('crawlspace', (table) => {
     table.increments('id').primary();
     table.timestamp('time').defaultTo(knex.fn.now());
-    table.decimal('temp', 4, 2);
-    table.decimal('humidity', 4, 2);
+    table.decimal('temp', 5, 2);
+    table.decimal('humidity', 5, 2);
   });
 };
 
