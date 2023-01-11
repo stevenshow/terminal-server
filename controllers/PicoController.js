@@ -15,7 +15,10 @@ class PicoController {
   }
 
   InsertReading = async (reading) => {
-    return await this.database.Create(reading);
+    const date = new Date();
+    console.log(reading);
+    console.log(date);
+    return await this.database.Create({ time: date, ...reading });
   };
 }
 
