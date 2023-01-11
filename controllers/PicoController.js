@@ -6,7 +6,7 @@ processInsert = (datum) => prepareDatabaseDates(datum, ['date']);
 class PicoController {
   constructor() {
     this.database = new Database({
-      tableName: 'humidity',
+      tableName: 'crawlspace',
       processor: this.processResult,
       beforeInsert: this.processInsert,
       timestamps: false,
