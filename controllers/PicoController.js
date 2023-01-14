@@ -18,6 +18,10 @@ class PicoController {
     console.log({ temp, humidity });
     return await this.database.Create({ temp: temp.toFixed(2), humidity: humidity.toFixed(2) });
   };
+
+  GetLastReading = async () => {
+    return await this.database.GetLastEntries(1);
+  };
 }
 
 module.exports = PicoController;

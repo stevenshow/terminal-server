@@ -30,6 +30,16 @@ class Database {
     return this.ProcessResults(await transaction.select('*').from(table || this.tableName));
   };
 
+  GetLastEntries = async (entries = 1, table = '', transaction = knex) => {
+    return this.ProcessResults(
+      await transaction
+        .select('*')
+        .from(table || this.tableName)
+        .orderBy('id', 'desc')
+        .limit(entries)
+    );
+  };
+
   ProcessResults = (items) => {
     return items.map(this.ProcessSingleResult);
   };
