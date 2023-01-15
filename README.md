@@ -1,4 +1,6 @@
 # terminal-server
+URL to call `api.devsteve.net`
+
 Currently hosting/serving the data for my terminal style portfolio website
 
 ## Getting Started:
