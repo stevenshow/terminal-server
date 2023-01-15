@@ -1,13 +1,15 @@
 # terminal-server
-URL to call `api.devsteve.net`
-
-Currently hosting/serving the data for my terminal style portfolio website
 
 ## Getting Started:
 - Clone git repo
 - Run `npm i`
 - Run `npm start` - This will run the server with `nodemon` so that chagnes are updated in real time
 - Direct traffic to port `3000`
+
+## Live server:
+If you would rather test out the endpoints on my live server, you can use the the URL `api.devsteve.net`
+
+Currently hosting/serving the data for my terminal style portfolio website
 
 ## Endpoints:
 ### `/card`
