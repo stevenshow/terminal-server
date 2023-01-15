@@ -31,13 +31,11 @@ class Database {
   };
 
   GetLastEntries = async (entries = 1, table = '', transaction = knex) => {
-    return this.ProcessResults(
-      await transaction
-        .select('*')
-        .from(table || this.tableName)
-        .orderBy('id', 'desc')
-        .limit(entries)
-    );
+    return await transaction
+      .select('*')
+      .from(table || this.tableName)
+      .orderBy('id', 'desc')
+      .limit(entries);
   };
 
   ProcessResults = (items) => {
