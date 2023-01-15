@@ -13,9 +13,9 @@ Currently hosting/serving the data for my terminal style portfolio website
   - `/` Will give the Home page cards
   - `/projects` Will give the Project cards
   - `/contact` Will give the contact cards
-### `products`
+### `/products`
 - Eventually will have more products, but right now it serves up the powerade endpoint
   - `/powerade` - This endpoint calls a function that will go and scrape the local smiths and grab the Blue Powerade price at that time.
-### `pico`
+### `/pico`
 - I would like this to be a place where the user can interface with my pi pico
   - `/humidity` - grabs the most recent reading from my raspberry pi pico DHT11 sensor in the crawlspace of my house.
