@@ -7,6 +7,7 @@ exports.up = function (knex) {
     table.string('ListId', 33).primary();
     table.string('BoardId', 33).references('TaskBoards.BoardId');
     table.string('name', 50);
+    table.integer('position');
   });
 };
 

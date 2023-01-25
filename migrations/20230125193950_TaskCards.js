@@ -9,6 +9,7 @@ exports.up = function (knex) {
     table.string('ListId', 33).references('TaskLists.ListId');
     table.string('name', 50);
     table.string('description', 500);
+    table.integer('position');
   });
 };
 
