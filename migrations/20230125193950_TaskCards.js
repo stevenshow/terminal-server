@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.hasTable('TaskCards').then((exists) => {
+  return knex.schema.hasTable('TaskCards').then((exists) => {
     if (!exists) {
       return knex.schema.createTable('TaskCards ', (table) => {
         table.string('CardId', 33).primary();

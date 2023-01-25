@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.hasTable('jotform').then((exists) => {
+  return knex.schema.hasTable('jotform').then((exists) => {
     if (!exists) {
       return knex.schema.createTable('jotform', (table) => {
         table.increments('id').primary();

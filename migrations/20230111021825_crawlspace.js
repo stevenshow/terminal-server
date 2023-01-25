@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.hasTable('crawlspace').then((exists) => {
+  return knex.schema.hasTable('crawlspace').then((exists) => {
     if (!exists) {
       return knex.schema.createTable('crawlspace', (table) => {
         table.increments('id').primary();

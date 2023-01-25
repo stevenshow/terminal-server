@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.hasTable('contact_cards').then((exists) => {
+  return knex.schema.hasTable('contact_cards').then((exists) => {
     if (!exists) {
       return knex.schema.createTable('contact_cards', (table) => {
         table.increments('id').primary();
