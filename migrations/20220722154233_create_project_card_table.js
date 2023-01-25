@@ -3,12 +3,16 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable('project_cards', (table) => {
-    table.increments('id').primary();
-    table.string('name', 100);
-    table.string('language', 50);
-    table.string('takeaway', 100);
-    table.text('description');
+  return knex.hasTable('home_cards').then((exists) => {
+    if (!exists) {
+      return knex.schema.createTable('project_cards', (table) => {
+        table.increments('id').primary();
+        table.string('name', 100);
+        table.string('language', 50);
+        table.string('takeaway', 100);
+        table.text('description');
+      });
+    }
   });
 };
 

@@ -3,11 +3,15 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable('TaskLists ', (table) => {
-    table.string('ListId', 33).primary();
-    table.string('BoardId', 33).references('TaskBoards.BoardId');
-    table.string('name', 50);
-    table.integer('position');
+  return knex.hasTable('TaskLists').then((exists) => {
+    if (!exists) {
+      return knex.schema.createTable('TaskLists ', (table) => {
+        table.string('ListId', 33).primary();
+        table.string('BoardId', 33).references('TaskBoards.BoardId');
+        table.string('name', 50);
+        table.integer('position');
+      });
+    }
   });
 };
 

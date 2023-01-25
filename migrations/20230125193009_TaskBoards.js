@@ -3,10 +3,14 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable('TaskBoards ', (table) => {
-    table.string('BoardId', 33).primary();
-    table.string('name', 50);
-    table.string('owner', 30);
+  return knex.hasTable('TaskBoards').then((exists) => {
+    if (!exists) {
+      return knex.schema.createTable('TaskBoards ', (table) => {
+        table.string('BoardId', 33).primary();
+        table.string('name', 50);
+        table.string('owner', 30);
+      });
+    }
   });
 };
 
