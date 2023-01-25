@@ -1,4 +1,5 @@
 const Database = require('../db/database');
+const knex = require('../db/knex');
 
 processResult = (datum) => ({ ...datum, boolean: !!datum.boolean });
 processInsert = (datum) => prepareDatabaseDates(datum, ['date']);
