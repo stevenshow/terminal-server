@@ -1,4 +1,3 @@
-const { json } = require('express');
 const express = require('express');
 const router = express.Router();
 const PicoController = require('../controllers/PicoController');
@@ -19,6 +18,20 @@ router.get('/humidity', async (req, res) => {
     res.status(200).send(await picoController.GetLastReading());
   } catch (err) {
     console.error('failed to get last humidity data');
+  }
+});
+
+router.post('/online', async (req, res) => {
+  try {
+    let date = Date();
+    res
+      .status(200)
+      .send(
+        'Pico online at ',
+        `${date.getUTCHours()}:${date.getUTCHours()}:${date.getUTCMinutes()}`
+      );
+  } catch (err) {
+    console.error('failed to send online status');
   }
 });
 
