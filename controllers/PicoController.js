@@ -1,4 +1,5 @@
 const Database = require('../db/database');
+const PiStats = require('../utils/stats');
 
 processResult = (datum) => ({ ...datum, boolean: !!datum.boolean });
 processInsert = (datum) => prepareDatabaseDates(datum, ['date']);
@@ -21,6 +22,11 @@ class PicoController {
 
   GetLastReading = async () => {
     return await this.database.GetLastEntries(1);
+  };
+
+  GetStats = async () => {
+    PiStats.printMemoryInfo();
+    PiStats.printCPUInfo();
   };
 }
 
