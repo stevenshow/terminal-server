@@ -24,7 +24,7 @@ router.get('/humidity', async (req, res) => {
 router.post('/online', async (req, res) => {
   try {
     let date = Date();
-    res.status(200).send('Pico online at ', date);
+    res.status(200).send('Pico online');
   } catch (err) {
     console.error('failed to send online status');
   }
