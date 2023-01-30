@@ -77,4 +77,4 @@ const PiStats = (function () {
   };
 })();
 
-export default PiStats;
+module.exports = PicoStats;
