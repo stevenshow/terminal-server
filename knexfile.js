@@ -1,13 +1,13 @@
-require("dotenv").config();
+require('dotenv').config();
 
 module.exports = {
-  client: "mysql",
-  version: "5.7",
+  client: 'mysql',
+  version: '5.7',
   connection: {
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DB,
+    host: 'db',
+    port: 3306,
+    user: 'root',
+    password: process.env.DOCKER_MYSQL_PASSWORD,
+    database: process.env.DOCKER_MYSQL_DB,
   },
 };
