@@ -22,7 +22,12 @@ console.log('Server is now listening on port ' + chalk.green(port));
  */
 
 var server = http.createServer(app);
+const io = require('socket.io')(server);
 
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  socket.emit('serverValue', { value: 'This is a value from the server' });
+});
 /**
  * Listen on provided port, on all network interfaces.
  */

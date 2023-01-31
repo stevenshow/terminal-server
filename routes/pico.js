@@ -32,7 +32,7 @@ router.post('/online', async (req, res) => {
 
 router.get('/stats', async (req, res) => {
   try {
-    res.status(200).send(await picoController.getStats());
+    res.status(200).send(await picoController.GetStats());
   } catch (err) {
     console.error(err);
   }

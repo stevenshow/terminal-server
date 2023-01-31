@@ -1,5 +1,5 @@
 const Database = require('../db/database');
-const PiStats = require('../utils/stats');
+const si = require('systeminformation');
 
 processResult = (datum) => ({ ...datum, boolean: !!datum.boolean });
 processInsert = (datum) => prepareDatabaseDates(datum, ['date']);
@@ -25,8 +25,12 @@ class PicoController {
   };
 
   GetStats = async () => {
-    PiStats.printMemoryInfo();
-    PiStats.printCPUInfo();
+    try {
+      const data = await si.currentLoad();
+      return data;
+    } catch (err) {
+      console.error(err);
+    }
   };
 }
 
