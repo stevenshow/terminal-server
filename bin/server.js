@@ -29,12 +29,6 @@ const io = require('../sockets/socket.js')(server, {
     credentials: true,
   },
 });
-// io.on('connection', (socket) => {
-//   socket.emit('serverValue', { value: 'This is a value from the server' });
-//   socket.on('getValueFromServer', (data, callback) => {
-//     callback({ value: '10' });
-//   });
-// });
 const pi = require('../sockets/pi');
 pi(io);
 
