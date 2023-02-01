@@ -4,30 +4,40 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('terminal-server:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('terminal-server:server');
+const http = require('http');
 const chalk = require('chalk');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 console.log('Server is now listening on port ' + chalk.green(port));
-
 /**
  * Create HTTP server.
  */
+const server = http.createServer(app);
 
-var server = http.createServer(app);
-const io = require('socket.io')(server);
-
-io.on('connection', (socket) => {
-  console.log('Client connected');
-  socket.emit('serverValue', { value: 'This is a value from the server' });
+// Create socket connections
+const io = require('../sockets/socket.js')(server, {
+  cors: {
+    origin: 'http://localhost:3001',
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
 });
+// io.on('connection', (socket) => {
+//   socket.emit('serverValue', { value: 'This is a value from the server' });
+//   socket.on('getValueFromServer', (data, callback) => {
+//     callback({ value: '10' });
+//   });
+// });
+const pi = require('../sockets/pi');
+pi(io);
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -65,7 +75,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -87,7 +97,7 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
