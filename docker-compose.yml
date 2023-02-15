@@ -5,11 +5,18 @@ services:
     environment:
       MYSQL_DATABASE: ${DOCKER_MYSQL_DB}
       MYSQL_ROOT_PASSWORD: ${DOCKER_MYSQL_PASSWORD}
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'db', '-u', 'root', '-p${DOCKER_MYSQL_PASSWORD}']
+      timeout: 20s
+      retries: 10
     ports:
       - 3306:3306
     volumes:
       - db-data:/var/lib/mysql
   app:
+    depends_on:
+      db:
+        condition: service_healthy
     image: node:16
     environment:
       DEPLOY: DOCKER
@@ -18,8 +25,10 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: sh -c "npm run start && npm run migrate && npm run seed"
-    links: 
+    command: >
+      sh -c "npm start"
+    # command: sh -c "npm run start && npm run migrate && npm run seed"
+    links:
       - db
     env_file: .env
 volumes:
