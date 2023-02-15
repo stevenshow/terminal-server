@@ -10,7 +10,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
   app:
-    image: node:16
+    image: node:latest
     environment:
       DEPLOY: DOCKER
     ports:
