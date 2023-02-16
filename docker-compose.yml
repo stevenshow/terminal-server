@@ -1,6 +1,7 @@
 version: '3'
 services:
   db:
+    container_name: Database
     image: mariadb
     environment:
       MYSQL_DATABASE: ${DOCKER_MYSQL_DB}
@@ -10,6 +11,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
   app:
+    container_name: Server
     image: node:latest
     environment:
       DEPLOY: DOCKER
@@ -19,7 +21,7 @@ services:
       - .:/app
     working_dir: /app
     command: sh -c "npm run start && npm run migrate && npm run seed"
-    links: 
+    links:
       - db
     env_file: .env
 volumes:
